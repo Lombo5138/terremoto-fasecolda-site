@@ -1,0 +1,12 @@
+{
+  "name": "terremoto-fasecolda-site",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "update": "node scripts/update-data.mjs",
+    "build": "node scripts/build-site.mjs",
+    "daily": "node scripts/update-data.mjs && node scripts/build-site.mjs",
+    "serve": "npx http-server docs -p 4173"
+  }
+}
