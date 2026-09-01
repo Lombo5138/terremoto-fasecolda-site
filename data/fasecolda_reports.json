@@ -122,5 +122,26 @@
       }
     ],
     "insurers": []
+  },
+  {
+    "id": "fasecolda-a81b9ab52c",
+    "title": "Reconstrucción tras el sismo: sector asegurador acelera el pago de indemnizaciones - Fasecolda Ir al contenido Fasecolda",
+    "publication_date": "2026-09-01",
+    "cutoff_date": "2026-09-01",
+    "claims": 66370,
+    "estimated_value_cop": 271000000000000,
+    "estimated_value_is_rounded": false,
+    "paid_value_cop": 42992000000,
+    "paid_claims": null,
+    "inspections": null,
+    "main_branch": null,
+    "source_type": "Fasecolda",
+    "source_url": "https://www.fasecolda.com/reconstruccion-tras-el-sismo-sector-asegurador-acelera-el-pago-de-indemnizaciones/",
+    "pdf_url": null,
+    "source_note": "Registro detectado automáticamente. Revisar antes de usar si la fecha de corte no fue interpretada explícitamente.",
+    "branches": [],
+    "departments": [],
+    "cities": [],
+    "insurers": []
   }
 ]
