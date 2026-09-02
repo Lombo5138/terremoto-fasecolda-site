@@ -10,7 +10,7 @@ const previous = reports.at(-2);
 
 const cop = (value) => {
   if (value === null || value === undefined) return "No publicado";
-  if (value >= 1_000_000_000_000) return `$${(value / 1_000_000_000_000).toLocaleString("es-CO", { maximumFractionDigits: 1 })} Bn`;
+  if (value >= 1_000_000_000_000) return `$${(value / 1_000_000_000_000).toLocaleString("es-CO", { maximumFractionDigits: 2 })} billones`;
   if (value >= 1_000_000_000) return `$${Math.round(value / 1_000_000_000).toLocaleString("es-CO")} mil MM`;
   return `$${Math.round(value / 1_000_000).toLocaleString("es-CO")} MM`;
 };
