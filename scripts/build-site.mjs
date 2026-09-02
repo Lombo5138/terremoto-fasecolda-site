@@ -7,6 +7,8 @@ const runLog = JSON.parse(await readFile("data/run_log.json", "utf8"));
 reports.sort((a, b) => a.cutoff_date.localeCompare(b.cutoff_date));
 const latest = reports.at(-1);
 const previous = reports.at(-2);
+const breakdown = latest.branches.length || latest.departments.length || latest.cities.length ? latest : previous;
+const breakdownIsPrevious = breakdown !== latest;
 
 const cop = (value) => {
   if (value === null || value === undefined) return "No publicado";
@@ -25,7 +27,7 @@ const delta = previous ? {
   valuePct: ((latest.estimated_value_cop - previous.estimated_value_cop) / previous.estimated_value_cop) * 100
 } : null;
 
-const maxClaims = Math.max(...latest.cities.map((city) => city.claims), 1);
+const maxClaims = Math.max(...breakdown.cities.map((city) => city.claims), 1);
 const mainBranch = latest.branches.toSorted((a, b) => (b.claims || 0) - (a.claims || 0))[0];
 const avgClaim = latest.claims && latest.estimated_value_cop ? latest.estimated_value_cop / latest.claims : null;
 
@@ -61,7 +63,7 @@ const html = `<!doctype html>
   </section>
 
   <section class="two">
-    ${latest.departments.length || latest.cities.length ? "" : `<p class="notice"><b>Desglose pendiente:</b> el comunicado web del tercer corte (28 de agosto) publica los totales nacionales, pero aún no publica apertura por ramo, departamento o ciudad. El PDF oficial enlazado por Fasecolda corresponde al Reporte No. 2 (corte del 21 de agosto).</p>`}
+    ${breakdownIsPrevious ? `<p class="notice"><b>Nota de comparabilidad:</b> las aperturas por ramo, departamento y ciudad corresponden al corte del ${date(breakdown.cutoff_date)} (Reporte No. 2). Fasecolda aún no ha publicado ese desglose para el último corte del ${date(latest.cutoff_date)}; las cifras nacionales superiores sí corresponden al último corte.</p>` : ""}
     <article class="panel">
       <h2>Evolución Fasecolda</h2>
       <table>
@@ -81,7 +83,7 @@ const html = `<!doctype html>
     <h2>Composición por ramo</h2>
     <table>
       <thead><tr><th>Ramo</th><th>Reclamaciones</th><th>Valor estimado</th><th>% reclamos</th></tr></thead>
-      <tbody>${rows(latest.branches, (b) => `<tr><td>${b.name}</td><td>${num(b.claims)}</td><td>${cop(b.estimated_value_cop)}</td><td>${b.claims ? pct((b.claims / latest.claims) * 100) : "No publicado"}</td></tr>`)}</tbody>
+      <tbody>${rows(breakdown.branches, (b) => `<tr><td>${b.name}</td><td>${num(b.claims)}</td><td>${cop(b.estimated_value_cop)}</td><td>${b.claims ? pct((b.claims / breakdown.claims) * 100) : "No publicado"}</td></tr>`) || `<tr><td colspan="4">No publicado</td></tr>`}</tbody>
     </table>
   </section>
 
@@ -90,12 +92,12 @@ const html = `<!doctype html>
       <h2>Geografía</h2>
       <table>
         <thead><tr><th>Departamento</th><th>Reclamaciones</th><th>Valor</th></tr></thead>
-        <tbody>${rows(latest.departments, (d) => `<tr><td>${d.name}</td><td>${num(d.claims)}</td><td>${cop(d.estimated_value_cop)}</td></tr>`) || `<tr><td colspan="3">No publicado</td></tr>`}</tbody>
+        <tbody>${rows(breakdown.departments, (d) => `<tr><td>${d.name}</td><td>${num(d.claims)}</td><td>${cop(d.estimated_value_cop)}</td></tr>`) || `<tr><td colspan="3">No publicado</td></tr>`}</tbody>
       </table>
     </article>
     <article class="panel">
       <h2>Ciudades</h2>
-      ${rows(latest.cities, (c) => `<div class="city"><span>${c.name}</span><div class="bar"><i style="width:${Math.max((c.claims / maxClaims) * 100, 1)}%"></i></div><b>${num(c.claims)}</b></div>`) || `<p class="muted">No publicado.</p>`}
+      ${rows(breakdown.cities, (c) => `<div class="city"><span>${c.name}</span><div class="bar"><i style="width:${Math.max((c.claims / maxClaims) * 100, 1)}%"></i></div><b>${num(c.claims)}</b></div>`) || `<p class="muted">No publicado.</p>`}
     </article>
   </section>
 
