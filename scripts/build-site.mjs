@@ -61,6 +61,7 @@ const html = `<!doctype html>
   </section>
 
   <section class="two">
+    ${latest.departments.length || latest.cities.length ? "" : `<p class="notice"><b>Desglose pendiente:</b> el comunicado web del tercer corte (28 de agosto) publica los totales nacionales, pero aún no publica apertura por ramo, departamento o ciudad. El PDF oficial enlazado por Fasecolda corresponde al Reporte No. 2 (corte del 21 de agosto).</p>`}
     <article class="panel">
       <h2>Evolución Fasecolda</h2>
       <table>
