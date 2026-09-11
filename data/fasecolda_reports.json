@@ -143,5 +143,28 @@
     "departments": [],
     "cities": [],
     "insurers": []
+  },
+  {
+    "id": "fasecolda-2026-09-08-corte-2026-09-07",
+    "title": "A un mes del terremoto de San José del Palmar, el sector asegurador continúa contribuyendo a la reconstrucción del país",
+    "publication_date": "2026-09-08",
+    "cutoff_date": "2026-09-07",
+    "claims": 68270,
+    "estimated_value_cop": 3700000000000,
+    "estimated_value_is_rounded": true,
+    "paid_value_cop": 95076000000,
+    "municipalities_count": 451,
+    "departments_count": 31,
+    "paid_claims": null,
+    "inspections": null,
+    "main_branch": null,
+    "source_type": "Fasecolda - LinkedIn",
+    "source_url": "https://es.linkedin.com/posts/federacion-de-aseguradores-colombianos-fasecolda_a-un-mes-del-terremoto-de-san-jos%C3%A9-del-palmar-activity-7503063657560358912-ptIe",
+    "pdf_url": null,
+    "source_note": "Fasecolda reporta 68.270 reclamaciones, siniestros estimados en aproximadamente COP 3,7 billones y pagos por más de COP 95.000 millones, con corte al 7 de septiembre de 2026. Las reclamaciones abarcan 451 municipios y 31 departamentos. No se publicó desglose comparable por aseguradora, ramo o ciudad.",
+    "branches": [],
+    "departments": [],
+    "cities": [],
+    "insurers": []
   }
 ]
