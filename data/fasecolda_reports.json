@@ -184,11 +184,31 @@
     "pdf_url": null,
     "source_note": "Sexto informe de Fasecolda reportado por La República: 85.496 reclamaciones, valor estimado de COP 5,5 billones y pagos por COP 274.590 millones, con corte al 18 de septiembre de 2026. La fuente periodística publica además una apertura por ramo; no se publicó aquí apertura comparable por aseguradora o ciudad.",
     "branches": [
-      {"name": "Incendio y terremoto", "claims": 61250, "estimated_value_cop": 4000000000000},
-      {"name": "Hogar", "claims": 18755, "estimated_value_cop": 541000000000},
-      {"name": "Automóviles", "claims": 1252, "estimated_value_cop": 21000000000},
-      {"name": "Riesgos laborales", "claims": 1137, "estimated_value_cop": 18000000000},
-      {"name": "Otros ramos", "claims": 3102, "estimated_value_cop": 69000000000}
+      {
+        "name": "Incendio y terremoto",
+        "claims": 61250,
+        "estimated_value_cop": 4000000000000
+      },
+      {
+        "name": "Hogar",
+        "claims": 18755,
+        "estimated_value_cop": 541000000000
+      },
+      {
+        "name": "Automóviles",
+        "claims": 1252,
+        "estimated_value_cop": 21000000000
+      },
+      {
+        "name": "Riesgos laborales",
+        "claims": 1137,
+        "estimated_value_cop": 18000000000
+      },
+      {
+        "name": "Otros ramos",
+        "claims": 3102,
+        "estimated_value_cop": 69000000000
+      }
     ],
     "departments": [],
     "cities": [],
