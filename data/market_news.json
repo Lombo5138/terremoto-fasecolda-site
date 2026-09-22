@@ -10,6 +10,16 @@
     "data_status": "Noticia de mercado; no comparable con cortes oficiales"
   },
   {
+    "id": "allianz-colombia-sismo-2026-08-20",
+    "date": "2026-08-20",
+    "title": "Allianz Colombia reporta 3.572 reclamaciones de hogar y moviliza más de 100 peritos",
+    "source": "Allianz Colombia",
+    "source_category": "Cifra propia publicada directamente por la aseguradora",
+    "source_url": "https://www.allianz.co/sala-de-prensa/comunicados/flexibilizacion-deducible-por-sismo.html",
+    "summary": "Allianz informó que había recibido 3.572 reclamaciones de hogar y movilizado más de 100 peritos y ajustadores. La cifra corresponde a la fecha de publicación y no es comparable directamente con los cortes gremiales de Fasecolda.",
+    "data_status": "Cifra propia de aseguradora; corte y alcance distintos al consolidado Fasecolda"
+  },
+  {
     "id": "sura-terremoto-2026-09-20",
     "date": "2026-09-20",
     "title": "Suramericana reporta 11.800 reclamaciones relacionadas con el terremoto",
